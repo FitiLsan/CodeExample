@@ -84,9 +84,9 @@
                 float light = _LightColor0 * lightIntensity;
 
                 float4 col = tex2D(_MainTex, i.uv);
-                col = applyHSBEffect(col);
+                col = applyHSBEffect(col * _Color);
 
-                return (col * _Color) * (light + unity_AmbientSky);
+                return (col) * (light + unity_AmbientSky);
             }
             ENDCG
         }
